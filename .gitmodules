@@ -1,0 +1,3 @@
+[submodule "tests/WP-CoreTestLib"]
+	path = tests/WP-CoreTestLib
+	url = https://github.com/mekom/WP-CoreTestLib
