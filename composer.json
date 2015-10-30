@@ -2,9 +2,14 @@
     "name": "sigurdsvela/wp-objectly",
     "description": "Provides OOP functionality for WordPress",
     "require-dev": {
-        "phpunit/phpunit": "^5.0"
+        "phpunit/phpunit": "3.7.*"
     },
     "license": "GPL 2.1",
+    "autoload": {
+        "psr-4": {
+            "oowp\\": "oowp/"
+        }
+    },
     "authors": [
         {
             "name": "sigurdsvela",
@@ -12,5 +17,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php" : ">=5.4.0",
+        "sigurdsvela/std" : "2.*"
+    }
 }
