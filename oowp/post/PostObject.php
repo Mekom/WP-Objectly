@@ -128,17 +128,6 @@ abstract class PostObject {
     }
 
     /**
-     * Set the post permalink
-     *
-     * @param string $perma The permalink
-     *
-     * @return void
-     */
-    public final function getPostPermalink($perma) {
-        return set_permalink($this->getPostID(), $perma);
-    }
-
-    /**
      * Get a post meta.
      * Returns null if there is no value
      *
