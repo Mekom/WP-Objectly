@@ -1,5 +1,5 @@
 <?php
-namespace oowp\tests\tests;
+namespace oowp\tests\tests\taxonomy;
 
 use oowp\taxonomy\CategoryTerm;
 
