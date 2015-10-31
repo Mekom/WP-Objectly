@@ -1,10 +1,18 @@
 <?php
 namespace oowp\post;
 
-abstract class PostType {
+class PostType extends PostObjectType {
+    private static $instance = null;
 
-    /**
-     * Get all the posts in this post type
-     */
-    public abstract function getPosts();
+    public static function instance() {
+        if (self::$instance === null) {
+            $instance = new self();
+        }
+
+        return $instance;
+    }
+
+    public function getPosts() {
+
+    }
 }

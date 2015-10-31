@@ -1,7 +1,7 @@
 <?php
 namespace oowp\post;
 
-abstract class Post {
+abstract class PostObject {
     /* -------------------- */
     /* # STATIC INTERFACE # */
     /* -------------------- */
