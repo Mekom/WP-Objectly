@@ -119,4 +119,8 @@ abstract class TaxonomyTerm implements ITaxonomyTerm {
     public function getTermParent() {
         return $this->parent;
     }
+
+    public function getTermPostCount() {
+        return $this->count;
+    }
 }
