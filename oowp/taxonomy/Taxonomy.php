@@ -1,7 +1,16 @@
 <?php
 namespace oowp\taxonomy;
 
-abstract class Taxonomy {
+use oowp\core\Singleton;
+
+abstract class Taxonomy extends Singleton {
+    /** @var static Singleton. The instance */
+    private static $instance = null;
+
+    public final static function newInstance() {
+        return new static();
+    }
+
     /**
      * Get the slug from this taxonomy
      *
