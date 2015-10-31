@@ -12,7 +12,7 @@ abstract class Taxonomy extends Singleton {
     }
 
     /**
-     * Get the slug from this taxonomy
+     * Get the slug for this taxonomy
      *
      * @return string
      */
