@@ -1,6 +1,9 @@
 <?php
 namespace oowp\post;
 
+use WP_Error;
+use RuntimeException;
+
 abstract class PostObject {
     /* -------------------- */
     /* # STATIC INTERFACE # */
@@ -15,6 +18,28 @@ abstract class PostObject {
      */
     public static function fromPostID($id) {
         return new static($id);
+    }
+
+    /**
+     * Insert a post.
+     * Wraps around the wp_insert_post function, and
+     * the $args argument take anything that wp_insert_post
+     * does
+     *
+     * To create a post, ommit the ID from $args
+     *
+     * @throws RuntimException
+     *
+     * @param array $args Anything wp_insert_post would take
+     *
+     * @return int The id of the post.
+     */
+    public static function insertPost(array $args) {
+        $postId = wp_insert_post($args);
+        if ($postId === 0 || $postId instanceof WP_Error) {
+            throw new RuntimeException("Failed to create new post.");
+        }
+        return $postId;
     }
 
     /* ---------------------- */
