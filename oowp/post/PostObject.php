@@ -65,14 +65,18 @@ abstract class PostObject {
      *
      * @return PostType
      */
-    public final function getPostType() {}
+    public final function getPostType() {
+        return get_post_type($this->getPostID());
+    }
 
     /**
      * Get the post title
      *
      * @return string The title
      */
-    public final function getPostTitle() {}
+    public final function getPostTitle() {
+        return get_the_title($this->getPostID());
+    }
 
     /**
      * Set the post title
@@ -81,14 +85,23 @@ abstract class PostObject {
      * @param string $title The new title
      * @return void
      */
-    public final function setPostTitle($title) {}
+    public final function setPostTitle($title) {
+        $post = array(
+            'ID'           => $this->getPostID(),
+            'post_title'   => $title,
+        );
+        wp_update_post( $post );
+    }
 
     /**
      * Get the post content
      *
      * @return string the content
      */
-    public final function getPostContent() {}
+    public final function getPostContent() {
+        $post = get_post($this->getPostID());
+        return $post->post_content;
+    }
 
     /**
      * Set the post content
@@ -97,7 +110,13 @@ abstract class PostObject {
      * @param string $content The new content
      * @return void
      */
-    public final function setPostContent($content) {}
+    public final function setPostContent($content) {
+        $post = array(
+            'ID'           => $this->getPostID(),
+            'post_content' => $content,
+        );
+        wp_update_post( $post );
+    }
 
     /**
      * Get the post permalink
@@ -126,7 +145,9 @@ abstract class PostObject {
      * @param string $key
      * @return string|null The value for the meta.
      */
-    public final function getPostMeta($key) {}
+    public final function getPostMeta($key) {
+        return get_post_meta($this->getPostID(), $key, true);
+    }
 
     /**
      * Set the value of a meta
@@ -137,5 +158,7 @@ abstract class PostObject {
      *
      * @return void
      */
-    public final function setPostMeta() {}
+    public final function setPostMeta($key, $value) {
+        update_post_meta($this->getPostID(), $key, $value);
+    }
 }
