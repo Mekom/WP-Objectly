@@ -1,7 +1,9 @@
 <?php
 namespace oowp\post;
 
-abstract class PostType {
+use oowp\core\Singleton;
+
+abstract class PostType extends Singleton {
 
     /**
      * Get all the posts in this post type

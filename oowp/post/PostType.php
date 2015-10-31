@@ -2,14 +2,8 @@
 namespace oowp\post;
 
 class PostType extends PostObjectType {
-    private static $instance = null;
-
-    public static function instance() {
-        if (self::$instance === null) {
-            $instance = new self();
-        }
-
-        return $instance;
+    public static function newInstance() {
+        return new self();
     }
 
     public function getPosts() {
