@@ -7,6 +7,15 @@ class PostType extends PostObjectType {
     }
 
     public function getPosts() {
+         $args = array(
+            'posts_per_page'   => -1,
+            'post_type'        => 'post',
+        );
+        $posts = get_posts($args);
+        $postsObject = [];
 
+        foreach($posts as $post) {
+            $postsObject[] = Post::fromPostID($post->ID);
+        }
     }
 }
