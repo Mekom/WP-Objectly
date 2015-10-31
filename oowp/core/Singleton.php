@@ -1,6 +1,11 @@
 <?php
 namespace oowp\core;
 
+/* Abstract static methods */
+interface ISingleton {
+    static function newInstance();
+}
+
 abstract class Singleton implements ISingleton{
     private static $instance;
 
