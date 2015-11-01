@@ -4,7 +4,9 @@ namespace oowp\post;
 use WP_Error;
 use RuntimeException;
 
-abstract class PostObject {
+class PostObject {
+    private $postID;
+
     /* -------------------- */
     /* # STATIC INTERFACE # */
     /* -------------------- */
@@ -51,14 +53,26 @@ abstract class PostObject {
      *
      * @param int $postID The post id
      */
-    protected abstract function __construct($postID);
+    protected final function __construct($postID) {
+        $this->postID = $postID;
+        $this->constructor($postID);
+    }
+
+    /**
+     * Because the __construct is final,
+     * override this instead to supply a constructor to
+     * any subclasses of PostObject
+     */
+    protected function constructor($postID) {}
 
     /**
      * Get post ID of this post
      *
      * @return int The post id
      */
-    public abstract function getPostID();
+    public final function getPostID() {
+        return $this->postID;
+    }
 
     /**
      * Get the post type
