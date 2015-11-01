@@ -19,9 +19,37 @@ abstract class Taxonomy extends Singleton {
     public abstract function getTaxonomySlug();
 
     /**
+     * Takes in a term ID, and returns a TaxonomyTerm
+     * object of the type assosiated with this taxonomy.
+     * For example, the Category class implementation
+     * of this method would return a CategoryTerm
+     *
+     * @throws InvalidArgumentException
+     * If the ID is invalid. Either not greater than 0
+     * ,or the ID is not a valid ID for a term in
+     * this taxonomy
+     *
+     * @return TaxonomyTerm[]
+     */
+    public abstract function toTerm($termID);
+
+    /**
      * Get the terms for this taxonomy
      *
      * @return TaxonomyTerm[]
      */
-    public abstract function getTerms();
+    public function getTerms() {
+        $terms = get_terms(
+            $this->getTaxonomySlug(),
+            array('hide_empty' => 0)
+        );
+
+        $termObjects = [];
+
+        foreach($terms as $term) {
+            $termObjects[] = $this->toTerm($term->term_id);
+        }
+
+        return $termObjects;
+    }
 }
