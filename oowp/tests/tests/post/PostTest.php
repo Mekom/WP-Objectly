@@ -136,10 +136,10 @@ class PostTest extends OOWPTestCase {
      * @return void
      */
     public function testSetPostMeta() {
-        $this->post->setPostMeta("meta2", "abc");
+        $this->post->setPostMeta("meta", "abc");
         $this->assertEquals(
             "abc",
-            $this->post->getPostMeta("meta2"),
+            $this->post->getPostMeta("meta"),
             "Failed to set post meta"
         );
     }
