@@ -126,6 +126,14 @@ class PostTest extends OOWPTestCase {
         );
     }
 
+    public function testGetUndefinedPostMeta() {
+        $this->assertEquals(
+            null,
+            $this->post->getPostMeta("dsnajfkdsnanjk"),
+            "Getting undefined post meta did not return null"
+        );
+    }
+
     /**
      * Set the value of a meta
      * Creates the meta key if it does not already exist
