@@ -4,6 +4,15 @@ namespace oowp\taxonomy;
 use oowp\core\Singleton;
 
 abstract class Taxonomy extends Singleton {
+    /**
+     * Required by singleton classes
+     * Creates a new instance of this class
+     * not to be called ever.
+     * Use the static ::instance() method
+     * to retrive an instance of this class
+     *
+     * @return PostType
+     */
     public final static function newInstance() {
         return new static();
     }
@@ -32,6 +41,9 @@ abstract class Taxonomy extends Singleton {
 
     /**
      * Get the terms for this taxonomy
+     * This function uses the per-class implementation
+     * of toTerm(int), and might throw, but only
+     * whatever the toTerm method does.
      *
      * @return TaxonomyTerm[]
      */

@@ -2,6 +2,11 @@
 namespace oowp\post;
 
 class PostType extends PostObjectType {
+    /**
+     * Get all posts of posttype "post"
+     *
+     * @return Post[]
+     */
     public function getPosts() {
          $args = array(
             'posts_per_page'   => -1,

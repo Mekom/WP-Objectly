@@ -4,6 +4,12 @@ namespace oowp\post;
 use WP_Error;
 use RuntimeException;
 
+/**
+ * Represents any post object
+ *
+ * The superclass of more spesific PostObject types
+ * like Page and Post.
+ */
 class PostObject {
     private $postID;
 
@@ -31,6 +37,7 @@ class PostObject {
      * To create a post, ommit the ID from $args
      *
      * @throws RuntimException
+     * If the insertion of the post failed for any reason
      *
      * @param array $args Anything wp_insert_post would take
      *
