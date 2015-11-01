@@ -2,13 +2,15 @@
 namespace oowp\post;
 
 class Post extends PostObject {
-    private $postID;
 
-    protected function __construct($postID) {
-        $this->postID = $postID;
+    protected function constructor($postID) {
+        // Check the type
+        if ($this->getPostType() !== "post") {
+            throw new InvalidArgumentException(
+                "The id \"$id\" is not a valid id for a " .
+                "post of type \"post\"."
+            );
+        }
     }
 
-    public function getPostID() {
-        return $this->postID;
-    }
 }
