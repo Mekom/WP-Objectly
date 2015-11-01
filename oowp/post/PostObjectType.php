@@ -3,7 +3,7 @@ namespace oowp\post;
 
 use oowp\core\Singleton;
 
-abstract class PostType extends Singleton {
+abstract class PostObjectType extends Singleton {
 
     /**
      * Get all the posts in this post type
