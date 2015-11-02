@@ -4,13 +4,30 @@ namespace oowp\post;
 use WP_Error;
 use RuntimeException;
 
+use oowp\post\support\Author;
+use oowp\post\support\IAuthor;
+use oowp\post\support\Excerpt;
+use oowp\post\support\IExcerpt;
+use oowp\post\support\Content;
+use oowp\post\support\IContent;
+use oowp\post\support\CustomFields;
+use oowp\post\support\ICustomFields;
+use oowp\post\support\Title;
+use oowp\post\support\ITitle;
+
 /**
  * Represents any post object
  *
  * The superclass of more spesific PostObject types
  * like Page and Post.
  */
-class PostObject {
+class PostObject implements IAuthor, IExcerpt, IContent, ICustomFields, ITitle {
+    use Author;
+    use Excerpt;
+    use Content;
+    use CustomFields;
+    use Title;
+
     private $postID;
 
     /* -------------------- */
@@ -91,84 +108,11 @@ class PostObject {
     }
 
     /**
-     * Get the post title
-     *
-     * @return string The title
-     */
-    public final function getPostTitle() {
-        return get_the_title($this->getPostID());
-    }
-
-    /**
-     * Set the post title
-     *
-     *
-     * @param string $title The new title
-     * @return void
-     */
-    public final function setPostTitle($title) {
-        $post = array(
-            'ID'           => $this->getPostID(),
-            'post_title'   => $title,
-        );
-        wp_update_post( $post );
-    }
-
-    /**
-     * Get the post content
-     *
-     * @return string the content
-     */
-    public final function getPostContent() {
-        $post = get_post($this->getPostID());
-        return $post->post_content;
-    }
-
-    /**
-     * Set the post content
-     *
-     *
-     * @param string $content The new content
-     * @return void
-     */
-    public final function setPostContent($content) {
-        $post = array(
-            'ID'           => $this->getPostID(),
-            'post_content' => $content,
-        );
-        wp_update_post( $post );
-    }
-
-    /**
      * Get the post permalink
      *
      * @return string The permalink
      */
     public final function getPostPermalink() {
         return get_permalink($this->getPostID());
-    }
-
-    /**
-     * Get a post meta.
-     * Returns null if there is no value
-     *
-     * @param string $key
-     * @return string|null The value for the meta.
-     */
-    public final function getPostMeta($key) {
-        return get_post_meta($this->getPostID(), $key, true);
-    }
-
-    /**
-     * Set the value of a meta
-     * Creates the meta key if it does not already exist
-     *
-     * @param string $key
-     * @param string $value
-     *
-     * @return void
-     */
-    public final function setPostMeta($key, $value) {
-        update_post_meta($this->getPostID(), $key, $value);
     }
 }
