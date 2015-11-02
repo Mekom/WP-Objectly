@@ -8,7 +8,7 @@ class PageType extends PostObjectType {
      * @return Post[]
      */
     public function getPosts() {
-         $args = array(
+        $args = array(
             'posts_per_page'   => -1,
             'post_type'        => 'page',
         );
