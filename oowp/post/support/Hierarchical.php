@@ -16,6 +16,28 @@ trait Hierarchical {
     }
 
     /**
+     * Get the post children of this post
+     *
+     * @return PostObject The children
+     */
+    public final function getPostChildren() {
+        $args = array(
+            'posts_per_page'   => -1,
+
+            // This is just for safty
+            // A post should never have a child of a different
+            // post type
+            'post_type'        => $this->getPostType(),
+            'post_parent'      => $this->getPostID(),
+        );
+        $posts = get_posts($args);
+        $postObjects = array();
+        foreach($posts as $post) {
+            $postObjects[] = static::fromPostID(post->ID);
+        }
+    }
+
+    /**
      * Set the parent of a post
      *
      * @param PostObject $parent The new parent
