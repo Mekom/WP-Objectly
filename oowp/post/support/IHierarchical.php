@@ -1,4 +1,20 @@
 <?php
 namespace oowp\post\support;
 
-interface IHierarchical {}
+use oowp\post\PostObject;
+
+interface IHierarchical {
+    /**
+     * Get the parent post of this post
+     * @return PostObject The post parent
+     */
+    public final function getPostParent();
+
+    /**
+     * Set the parent of a post
+     *
+     * @param PostObject $parent The new parent
+     * @return void
+     */
+    public final function setPostParent(PostObject $parent);
+}
