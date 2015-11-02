@@ -1,7 +1,11 @@
 <?php
 namespace oowp\post;
 
-class Post extends PostObject {
+use oowp\post\support\Hierarchical;
+use oowp\post\support\IHierarchical;
+
+class Post extends PostObject implements IHierarchical{
+    use Hierarchical;
 
     protected function constructor($postID) {
         // Check the type
