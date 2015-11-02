@@ -1,12 +1,7 @@
 <?php
 namespace oowp\core;
 
-/* Abstract static methods */
-interface ISingleton {
-    static function newInstance();
-}
-
-abstract class Singleton implements ISingleton{
+abstract class Singleton {
     private static $instance;
 
     public final static function instance() {
@@ -17,5 +12,14 @@ abstract class Singleton implements ISingleton{
         }
 
         return self::$instance;
+    }
+
+    /**
+     * Override this method to customize how the first instance is created
+     *
+     * @return any The instance
+     */
+    public static function newInstance() {
+        return new static();
     }
 }

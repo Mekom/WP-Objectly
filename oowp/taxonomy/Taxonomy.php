@@ -5,19 +5,6 @@ use oowp\core\Singleton;
 
 abstract class Taxonomy extends Singleton {
     /**
-     * Required by singleton classes
-     * Creates a new instance of this class
-     * not to be called ever.
-     * Use the static ::instance() method
-     * to retrive an instance of this class
-     *
-     * @return PostType
-     */
-    public final static function newInstance() {
-        return new static();
-    }
-
-    /**
      * Get the slug for this taxonomy
      *
      * @return string
