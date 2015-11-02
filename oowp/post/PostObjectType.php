@@ -37,6 +37,15 @@ abstract class PostObjectType extends Singleton {
     );
 
     /**
+     * Get the post type description
+     *
+     * @return string The post type description
+     */
+    public function getDescription() {
+
+    }
+
+    /**
      * Get all the posts in this post type
      */
     public abstract function getPosts();
