@@ -4,30 +4,13 @@ namespace oowp\post;
 use WP_Error;
 use RuntimeException;
 
-use oowp\post\support\Author;
-use oowp\post\support\IAuthor;
-use oowp\post\support\Excerpt;
-use oowp\post\support\IExcerpt;
-use oowp\post\support\Content;
-use oowp\post\support\IContent;
-use oowp\post\support\CustomFields;
-use oowp\post\support\ICustomFields;
-use oowp\post\support\Title;
-use oowp\post\support\ITitle;
-
 /**
  * Represents any post object
  *
  * The superclass of more spesific PostObject types
  * like Page and Post.
  */
-class PostObject implements IAuthor, IExcerpt, IContent, ICustomFields, ITitle {
-    use Author;
-    use Excerpt;
-    use Content;
-    use CustomFields;
-    use Title;
-
+class PostObject {
     private $postID;
 
     /* -------------------- */
