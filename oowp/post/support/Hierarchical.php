@@ -33,7 +33,7 @@ trait Hierarchical {
         $posts = get_posts($args);
         $postObjects = array();
         foreach($posts as $post) {
-            $postObjects[] = static::fromPostID(post->ID);
+            $postObjects[] = static::fromPostID($post->ID);
         }
     }
 
