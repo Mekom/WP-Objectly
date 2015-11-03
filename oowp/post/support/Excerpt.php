@@ -7,8 +7,8 @@ trait Excerpt {
      *
      * @return string The excerpt
      */
-        $post = get_post($post_id);
     public final function getPostExcerpt() {
+        $post = get_post($this->getPostID());
         return $post->post_excerpt;
     }
 
@@ -21,7 +21,7 @@ trait Excerpt {
     public final function setPostExcerpt($excerpt) {
         $post = array(
             'ID'           => $this->getPostID(),
-            'post_excerpt' => $content,
+            'post_excerpt' => $excerpt,
         );
         wp_update_post($post);
     }
