@@ -1,6 +1,8 @@
 <?php
 namespace oowp\post;
 
+use InvalidArgumentException;
+
 use oowp\post\support\Revisions;
 use oowp\post\support\IRevisions;
 
