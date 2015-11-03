@@ -19,7 +19,7 @@ class Post extends HierarchicalCorePostObject implements IRevisions {
 
         if ($postType !== "post") {
             throw new InvalidArgumentException(
-                "The id \"$id\" is not a valid id for a " .
+                "The id \"$postID\" is not a valid id for a " .
                 "post of type \"post\" or a revision for a post of type \"post\"."
             );
         }
