@@ -7,8 +7,8 @@ trait Excerpt {
      *
      * @return string The excerpt
      */
-    public final function getExcerpt() {
         $post = get_post($post_id);
+    public final function getPostExcerpt() {
         return $post->post_excerpt;
     }
 
@@ -18,7 +18,7 @@ trait Excerpt {
      * @param string $excerpt The new excerpt
      * @return void
      */
-    public final function setExcerpt($excerpt) {
+    public final function setPostExcerpt($excerpt) {
         $post = array(
             'ID'           => $this->getPostID(),
             'post_excerpt' => $content,

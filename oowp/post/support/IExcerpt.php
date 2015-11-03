@@ -7,7 +7,7 @@ interface IExcerpt {
      *
      * @return string The excerpt
      */
-    public function getExcerpt();
+    public function getPostExcerpt();
 
     /**
      * Set the excerpt
@@ -15,5 +15,5 @@ interface IExcerpt {
      * @param string $excerpt The new excerpt
      * @return void
      */
-    public function setExcerpt($excerpt);
+    public function setPostExcerpt($excerpt);
 }
