@@ -11,7 +11,7 @@ trait Hierarchical {
      */
     public final function getPostParent() {
         $parentID = wp_get_post_parent_id($postID);
-        if ($parentID === false) return null;
+        if ($parentID === 0) return null;
         return static::fromPostID($parentID);
     }
 
