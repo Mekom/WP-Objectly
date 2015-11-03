@@ -35,6 +35,7 @@ trait Hierarchical {
         foreach($posts as $post) {
             $postObjects[] = static::fromPostID($post->ID);
         }
+        return $postObjects;
     }
 
     /**
