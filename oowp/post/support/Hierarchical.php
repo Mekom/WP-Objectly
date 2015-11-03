@@ -10,7 +10,7 @@ trait Hierarchical {
      * @return PostObject|null The post parent, or null if this post has no parent
      */
     public final function getPostParent() {
-        $parentID = wp_get_post_parent_id($postID);
+        $parentID = wp_get_post_parent_id($this->getPostID());
         if ($parentID === 0) return null;
         return static::fromPostID($parentID);
     }
