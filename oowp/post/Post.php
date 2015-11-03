@@ -15,10 +15,10 @@ class Post extends HierarchicalCorePostObject implements IRevisions {
             $postType = $this->getCurrentRevision()->getPostType();
         }
 
-        if ($postType !== "page") {
+        if ($postType !== "post") {
             throw new InvalidArgumentException(
                 "The id \"$id\" is not a valid id for a " .
-                "post of type \"page\" or a revision for a post of type \"page\"."
+                "post of type \"post\" or a revision for a post of type \"post\"."
             );
         }
     }
