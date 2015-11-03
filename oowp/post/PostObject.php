@@ -45,6 +45,13 @@ class PostObject {
      */
     public static function insertPost(array $args) {
         $postId = wp_insert_post($args);
+
+        if (!isset($args["post_title"])) {
+            throw new InvalidArgumentException(
+                "A title is required to insert a post"
+            );
+        }
+
         if ($postId === 0 || $postId instanceof WP_Error) {
             throw new RuntimeException("Failed to create new post.");
         }
