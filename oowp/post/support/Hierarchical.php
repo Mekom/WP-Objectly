@@ -23,10 +23,7 @@ trait Hierarchical {
     public final function getPostChildren() {
         $args = array(
             'posts_per_page'   => -1,
-
-            // This is just for safty
-            // A post should never have a child of a different
-            // post type
+            'post_status'      => 'any',
             'post_type'        => $this->getPostType(),
             'post_parent'      => $this->getPostID(),
         );
