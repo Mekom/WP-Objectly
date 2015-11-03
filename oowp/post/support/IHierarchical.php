@@ -8,14 +8,14 @@ interface IHierarchical {
      * Get the parent post of this post
      * @return PostObject The post parent
      */
-    public final function getPostParent();
+    public function getPostParent();
 
     /**
      * Get the post children of this post
      *
      * @return PostObject The children
      */
-    public final function getPostChildren();
+    public function getPostChildren();
 
     /**
      * Set the parent of a post
@@ -23,5 +23,5 @@ interface IHierarchical {
      * @param PostObject $parent The new parent
      * @return void
      */
-    public final function setPostParent(PostObject $parent);
+    public function setPostParent(PostObject $parent);
 }
