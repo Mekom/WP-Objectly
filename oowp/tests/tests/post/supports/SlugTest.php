@@ -31,7 +31,7 @@ class SlugTest extends OOWPTestCase {
         $this->post->setPostSlug("new-slug");
         $this->assertEquals(
             "new-slug",
-            $this->post->getPostSlug("my-slug")
+            $this->post->getPostSlug()
         );
     }
 }
