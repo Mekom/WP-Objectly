@@ -19,7 +19,7 @@ use oowp\post\support\ISlug;
  * post, page, attachment, and revision.
  */
 class CorePostObject extends PostObject implements
-    IAuthor, IExcerpt, IContent, ICustomFields, ISlug, ITitle {
+    IAuthor, ICustomFields, IExcerpt, IContent, ISlug, ITitle {
     use Author;
     use Excerpt;
     use Content;
