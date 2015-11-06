@@ -1,6 +1,8 @@
 <?php
 namespace oowp\post;
 
+use std\lang\ExtendableClass;
+
 use WP_Error;
 use RuntimeException;
 
@@ -10,7 +12,7 @@ use RuntimeException;
  * The superclass of more spesific PostObject types
  * like Page and Post.
  */
-class PostObject {
+class PostObject extends ExtendableClass {
     private $postID;
 
     /* -------------------- */
@@ -68,6 +70,7 @@ class PostObject {
      * @param int $postID The post id
      */
     protected final function __construct($postID) {
+        $this->extendableInit();
         $this->postID = $postID;
         $this->constructor($postID);
     }
