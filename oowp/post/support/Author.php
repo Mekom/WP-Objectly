@@ -9,7 +9,7 @@ trait Author {
      *
      * @return oowp\user\User The author
      */
-    public final function getAuthor() {
+    public final function getPostAuthor() {
         $authorID = get_post_field( 'post_author', $this->getPostID() );
         return User::fromUserID($authorID);
     }
@@ -20,7 +20,7 @@ trait Author {
      * @param User $user The new author
      * @return void
      */
-    public final function setAuthor(User $user) {
+    public final function setPostAuthor(User $user) {
         $post = array(
             'ID'           => $this->getPostID(),
             'post_author'  => $user->getUserID(),

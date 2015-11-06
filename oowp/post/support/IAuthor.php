@@ -10,7 +10,7 @@ interface IAuthor {
      *
      * @return oowp\user\User The author
      */
-    public function getAuthor();
+    public function getPostAuthor();
 
     /**
      * Set the author
@@ -18,5 +18,5 @@ interface IAuthor {
      * @param User $user The new author
      * @return void
      */
-    public function setAuthor(User $user);
+    public function setPostAuthor(User $user);
 }
