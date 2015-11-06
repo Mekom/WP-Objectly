@@ -19,6 +19,6 @@
     "minimum-stability": "stable",
     "require": {
         "php" : ">=5.4.0",
-        "sigurdsvela/std" : "2.1-a1"
+        "sigurdsvela/std" : "dev-develop"
     }
 }
