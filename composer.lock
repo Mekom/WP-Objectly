@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2317dd466975e931984196ab262c495d",
-    "content-hash": "d756f35cf0d77a390a9f5e4b9edac223",
+    "hash": "00a71ab56366a2734f55f0eeff2cee5b",
+    "content-hash": "1a46fc3220d25bc92c4c419f72eb29b2",
     "packages": [
         {
             "name": "sigurdsvela/std",
-            "version": "v2.1-a1",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sigurdsvela/phpstd.git",
-                "reference": "5a558421424e599abdc7969d76037f3f462fd3b3"
+                "reference": "9374151bd2008bf9526670c4c9d8b5e022c53da9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sigurdsvela/phpstd/zipball/5a558421424e599abdc7969d76037f3f462fd3b3",
-                "reference": "5a558421424e599abdc7969d76037f3f462fd3b3",
+                "url": "https://api.github.com/repos/sigurdsvela/phpstd/zipball/9374151bd2008bf9526670c4c9d8b5e022c53da9",
+                "reference": "9374151bd2008bf9526670c4c9d8b5e022c53da9",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 }
             ],
             "description": "This library provides alot of usefull functionality, and provides OO wrappers around PHP built in functionality.",
-            "time": "2015-11-06 01:10:59"
+            "time": "2015-11-06 04:37:26"
         }
     ],
     "packages-dev": [
@@ -461,7 +461,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sigurdsvela/std": 15
+        "sigurdsvela/std": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
