@@ -80,7 +80,7 @@ class HierarchicalTest extends OOWPTestCase {
         $this->assertEquals(
             array(
                 $parentChildren[0]->getPostID(),
-                $parentChildren[0]->getPostID()
+                $parentChildren[1]->getPostID()
             ),
             array(
                 $this->post->getPostID(),
